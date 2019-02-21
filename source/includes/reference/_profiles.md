@@ -327,3 +327,146 @@ issuerCountry            | Issued by country code. For example "US"    | Text
 issuerState              | Issued by state code. For example "NY"      | Text
 expiryDate               | Document expiry date. (optional)            | YYYY-MM-DD
 
+
+## Get business directors
+
+> Example Request:
+
+```shell
+curl -X GET https://api.sandbox.transferwise.tech/v1/profiles/{profileId}/directors \
+     -H "Authorization: Bearer <your api token>" 
+```
+
+> Example Response:
+
+```json
+[
+  {
+    "id": <director id>,
+    "firstName": "John",
+    "lastName": "Doe",
+    "dateOfBirth": "1982-05-20",
+    "countryOfResidenceIso3Code": "usa"
+  },
+  {
+    "id": <director id>,
+    "firstName": "Jane",
+    "lastName": "Doe",
+    "dateOfBirth": "1981-12-07",
+    "countryOfResidenceIso3Code": "usa"
+  }
+]
+```
+List of all directors supervising the business profile.
+
+### Request (Business)
+**`GET https://api.sandbox.transferwise.tech/v1/profiles/{profileId}/directors`**
+
+
+## Add business directors
+
+> Example Request:
+
+```shell
+curl -X POST https://api.sandbox.transferwise.tech/v1/profiles/{profileId}/directors \
+     -H "Authorization: Bearer <your api token>" 
+     -H "Content-Type: application/json" \
+     -d '[
+             {
+                 "firstName": "John",
+                 "lastName": "Doe",
+                 "dateOfBirth": "1982-05-20",
+                 "countryOfResidenceIso3Code": "usa"
+             },
+             {
+                 "firstName": "Jane",
+                 "lastName": "Doe",
+                 "dateOfBirth": "1981-12-07",
+                 "countryOfResidenceIso3Code": "fra"
+             }
+        ]'
+```
+
+> Example Response:
+
+```json
+[
+    {
+        "id": <director id>,
+        "firstName": "John",
+        "lastName": "Doe",
+        "dateOfBirth": "1982-05-20",
+        "countryOfResidenceIso3Code": "usa"
+    },
+    {
+        "id": <director id>,
+        "firstName": "Jane",
+        "lastName": "Doe",
+        "dateOfBirth": "1981-12-07",
+        "countryOfResidenceIso3Code": "fra"
+    },
+    {
+        "id": <director id>,
+        "firstName": "Oliver",
+        "lastName": "Wilson",
+        "dateOfBirth": "2017-12-31",
+        "countryOfResidenceIso3Code": "est"
+    }
+]
+```
+Adds new directors to the business profile.
+Returns all the directors currently associated with the business profile
+
+### Request (Business)
+**`POST https://api.sandbox.transferwise.tech/v1/profiles/{profileId}/directors`**
+
+
+## Replace business directors
+
+> Example Request:
+
+```shell
+curl -X PUT https://api.sandbox.transferwise.tech/v1/profiles/{profileId}/directors \
+     -H "Authorization: Bearer <your api token>" 
+     -H "Content-Type: application/json" \
+     -d '[
+             {
+                 "firstName": "John",
+                 "lastName": "Doe",
+                 "dateOfBirth": "1982-05-20",
+                 "countryOfResidenceIso3Code": "usa"
+             },
+             {
+                 "firstName": "Jane",
+                 "lastName": "Doe",
+                 "dateOfBirth": "1981-12-07",
+                 "countryOfResidenceIso3Code": "fra"
+             }
+        ]'
+```
+
+> Example Response:
+
+```json
+[
+    {
+        "id": <director id>,
+        "firstName": "John",
+        "lastName": "Doe",
+        "dateOfBirth": "1982-05-20",
+        "countryOfResidenceIso3Code": "usa"
+    },
+    {
+        "id": <director id>,
+        "firstName": "Jane",
+        "lastName": "Doe",
+        "dateOfBirth": "1981-12-07",
+        "countryOfResidenceIso3Code": "fra"
+    }
+]
+```
+Overrides directors in the business profile.
+Returns all the directors currently associated with the business profile
+
+### Request (Business)
+**`PUT https://api.sandbox.transferwise.tech/v1/profiles/{profileId}/directors`**
