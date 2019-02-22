@@ -369,7 +369,7 @@ Returns the list of all directors associated with the business profile.
 
 ```shell
 curl -X POST https://api.sandbox.transferwise.tech/v1/profiles/{profileId}/directors \
-     -H "Authorization: Bearer <your api token>" 
+     -H "Authorization: Bearer <your api token>" \
      -H "Content-Type: application/json" \
      -d '[
              {
@@ -427,7 +427,7 @@ Returns the list of all directors associated with the business profile.
 
 ```shell
 curl -X PUT https://api.sandbox.transferwise.tech/v1/profiles/{profileId}/directors \
-     -H "Authorization: Bearer <your api token>" 
+     -H "Authorization: Bearer <your api token>" \
      -H "Content-Type: application/json" \
      -d '[
              {
@@ -517,7 +517,7 @@ Returns the list of all ultimate beneficial owners associated with the business 
 
 ```shell
 curl -X POST https://api.sandbox.transferwise.tech/v1/profiles/{profileId}/ubos \
-     -H "Authorization: Bearer <your api token>" 
+     -H "Authorization: Bearer <your api token>" \
      -H "Content-Type: application/json" \
      -d '[
              {
@@ -585,7 +585,7 @@ Returns the list of all ultimate beneficial owners associated with the business 
 
 ```shell
 curl -X PUT https://api.sandbox.transferwise.tech/v1/profiles/{profileId}/ubos \
-     -H "Authorization: Bearer <your api token>" 
+     -H "Authorization: Bearer <your api token>" \
      -H "Content-Type: application/json" \
      -d '[
              {
@@ -636,3 +636,45 @@ Returns the list of all ultimate beneficial owners associated with the business 
 
 ### Request (Business)
 **`PUT https://api.sandbox.transferwise.tech/v1/profiles/{profileId}/ubos`**
+
+
+## Open update window
+
+> Example Request:
+
+```shell
+curl -X POST https://api.sandbox.transferwise.tech/v1/profiles/{profileId}/update-window \
+     -H "Authorization: Bearer <your api token>" 
+```
+
+> Example Response:
+
+```json
+
+```
+
+Opens the update window for updating the business profile information: details, directors, owners.
+
+### Request (Business)
+**`POST https://api.sandbox.transferwise.tech/v1/profiles/{profileId}/update-window`**
+
+
+## Close update window
+
+> Example Request:
+
+```shell
+curl -X DELETE https://api.sandbox.transferwise.tech/v1/profiles/{profileId}/update-window \
+     -H "Authorization: Bearer <your api token>" 
+```
+
+> Example Response:
+
+```json
+
+```
+
+Deletes the update window for updating the business profile.
+
+### Request (Business)
+**`POST https://api.sandbox.transferwise.tech/v1/profiles/{profileId}/update-window`**

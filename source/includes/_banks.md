@@ -282,6 +282,11 @@ Creating a business profile is similar to how you created personal profile. Ther
 
 2) [Create business user profile – address data](#addresses-create) 
 
+3) [Create business user profile - directors data](#user-profiles-add-business-directors)
+
+3) [Create business user profile - owners data](#user-profiles-add-business-ultimate-beneficial-owners)
+
+
 Currently we do not support a fully automated business onboarding flow over the API - this feature is coming soon, please contact the TransferWise team for more details.
 
 ## Create quote
