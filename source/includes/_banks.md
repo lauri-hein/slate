@@ -22,7 +22,7 @@ There are different ways to build the frontend experience, especially when it co
 For example, you can put sign up/log in step as a first step, then show the currency calculator, and then collect recipient details.
 Alternatively, you can build it so a user starts from the calculator, then you collect recipient details, and as a last step ask user to sign up/log in.
 
-We have plenty of examples to show you how this has been done by our current parterns and can help you to build a great expereince for your customers.
+We have plenty of examples to show you how this has been done by our current partners and can help you to build a great experience for your customers.
 
 ## Building your backend
 
@@ -87,7 +87,7 @@ Your webiste or app opens the folowing url in the user's browser.
 `https://sandbox.transferwise.tech/oauth/authorize?response_type=code&client_id=<your-api-client-id>&redirect_uri=<redirect-uri>`
 
 Replace *your-api-client-id* and *redirect-uri* with your specific values. 
-The redirect URL should be the address you want the user to return to after the authorization flow, which will have been preconfigured when you requested your API access tokens. This can be different accross the sandbox and production environements and we can update it for you upon reuqest.
+The redirect URL should be the address you want the user to return to after the authorization flow, which will have been preconfigured when you requested your API access tokens. This can be different across the sandbox and production environments and we can update it for you upon request.
 
  You should not use `WebView` components to show the authorization page to the users because they are not secure and will not allow users to log in to TransferWise with Google, which is an option used by some of our users. Your app should instead open the device's full browser app.
 
@@ -245,7 +245,7 @@ In the case you created the user using the [sign up new users via API](#bank-int
 
 If the user has not reclaimed their account then the original `registrationCode` you generated should still be able to generate new tokens for the user. Because of this you should store this code alongside the created user ID in your database at the point of user generation.
 
-If the previosuly stored token fails with an error code 400 and error:
+If the previously stored token fails with an error code 400 and error:
 
 ```json
 {
@@ -332,7 +332,7 @@ This works well when the email addresses match in the first place and aren't upd
 
 ### Non-matching email addresses
 
-If a user already has a TransferWise account and you create a user for the same person under a differnt email address they could end up with a duplicate user account under the second email address. Currently we monitor this behaviour for abuse but we are working on a more robust user creation solution to prevent this occuring.
+If a user already has a TransferWise account and you create a user for the same person under a different email address they could end up with a duplicate user account under the second email address. Currently we monitor this behaviour for abuse but we are working on a more robust user creation solution to prevent this occurring.
 
 ### Email Change
 
@@ -354,7 +354,7 @@ If the token expires for a user not created by the bank and the user has a new e
 The result of many of these flows is that the user may end up with more than one TransferWise account, which is undesirable. Currently we monitor this behaviour for abuse but we are working on a more robust user creation scenario to prevent this occurring.
 
 ### Email change mitigation 
-The result of these eventualities are that over time a user of the bank could be linked to more than one TransferWise account and so therefore you will need to be defensive when requesting older user data as the request may fail because we forbid one user to access other user's data. We recommend to keep a local copy of your user's transfer data and update it asynchronously such that older transfers remain accessible to the user in the case where it can no longerbe accessed. You should also make sure to handle these failing calls gracefully and continue to process transfers that can be accessed over the API.
+The result of these eventualities are that over time a user of the bank could be linked to more than one TransferWise account and so therefore you will need to be defensive when requesting older user data as the request may fail because we forbid one user to access other user's data. We recommend to keep a local copy of your user's transfer data and update it asynchronously such that older transfers remain accessible to the user in the case where it can no longer be accessed. You should also make sure to handle these failing calls gracefully and continue to process transfers that can be accessed over the API.
 
 In the event a user is not happy at losing access to their older data or having two accounts is confusing then we can manually update the email addresses to match for the two accounts they want.
 
