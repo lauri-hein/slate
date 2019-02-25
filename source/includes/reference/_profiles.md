@@ -420,6 +420,13 @@ Returns the list of all directors associated with the business profile.
 ### Request (Business)
 **`POST https://api.sandbox.transferwise.tech/v1/profiles/{profileId}/directors`**
 
+Field                      | Description                   | Format
+---------                  | -------                       |-----------
+firstName                  | Director first name           | Text
+lastName                   | Director last name            | Text
+dateOfBirth                | Date of birth                 | YYYY-MM-DD
+countryOfResidenceIso3Code | 3 character country code      | Text
+
 
 ## Replace business directors
 
@@ -470,6 +477,13 @@ Returns the list of all directors associated with the business profile.
 
 ### Request (Business)
 **`PUT https://api.sandbox.transferwise.tech/v1/profiles/{profileId}/directors`**
+
+Field                      | Description                  | Format
+---------                  | -------                      |-----------
+firstName                  | Director first name          | Text
+lastName                   | Director last name           | Text
+dateOfBirth                | Date of birth                | YYYY-MM-DD
+countryOfResidenceIso3Code | 3 character country code     | Text
 
 
 ## Get business ultimate beneficial owners
@@ -578,6 +592,15 @@ Returns the list of all ultimate beneficial owners associated with the business 
 ### Request (Business)
 **`POST https://api.sandbox.transferwise.tech/v1/profiles/{profileId}/ubos`**
 
+Field                      | Description                    | Format
+---------                  | -------                        |-----------
+name                       | Owner full name                | Text
+dateOfBirth                | Date of birth                  | YYYY-MM-DD
+countryOfResidenceIso3Code | 3 character country code       | Text
+addressFirstLine           | First line of address          | Text
+postCode                   | Address post code              | Text
+ownershipPercentage        | Percentage of ownership        | Integer
+
 
 ## Replace business ultimate beneficial owners
 
@@ -636,6 +659,15 @@ Returns the list of all ultimate beneficial owners associated with the business 
 
 ### Request (Business)
 **`PUT https://api.sandbox.transferwise.tech/v1/profiles/{profileId}/ubos`**
+
+Field                      | Description                    | Format
+---------                  | -------                        |-----------
+name                       | Owner full name                | Text
+dateOfBirth                | Date of birth                  | YYYY-MM-DD
+countryOfResidenceIso3Code | 3 character country code       | Text
+addressFirstLine           | First line of address          | Text
+postCode                   | Address post code              | Text
+ownershipPercentage        | Percentage of ownership        | Integer
 
 
 ## Open update window

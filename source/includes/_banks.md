@@ -256,7 +256,6 @@ If the previously stored token fails with an error code 400 and error:
 In this case you can assume the user has reclaimed the account and push them through the [get user authorization for existing accounts](#bank-integrations-guide-get-user-authorization-for-existing-accounts) flow.
 
 ## Create personal user profile
-
 When you first get access to a user's TransferWise user account you will cannot predict if they already have submitted their profile data or not.
 
 [User Profiles.List](#user-profiles-list) endpoint will give you data for both personal and business profiles, if it exists. This makes it easy to
@@ -268,26 +267,29 @@ There are three steps to creating a new personal user profile:
 
 1) [Create personal user profile – general data](#user-profiles-create-personal). This includes customer name, date of birth, and phone number. 
 
-2) [Create personal user profile – address data](#addresses-create). Once the general profile information has been saved, you also need to add address information to the personal user profile.
+2) [Open update window](#user-profiles-open-update-window). Open the update window for profile updates.
 
-3) [Create identification document](#user-profiles-create-identification-document). Adding identification document (Passport, Drivers License etc ) metadata to user profile.  This is an optional step depending on the KYC relationship we have with your bank, please contact the team at TransferWise to discuss further.
+3) [Create personal user profile – address data](#addresses-create). Add address information to the personal user profile.
+
+4) [Close update window](#user-profiles-close-update-window). Close the update window for profile updates.
 
 ## Create business user profile
-
 A personal profile has to be created first. You can’t create a business user profile without a personal profile.
 
 Creating a business profile is similar to how you created personal profile. There are four steps:
 
-1) [Create business user profile – general data](#user-profiles-create-business)
+1) [Create business user profile – general data](#user-profiles-create-business). This includes business name, type and other. 
 
-2) [Create business user profile – address data](#addresses-create) 
+2) [Open update window](#user-profiles-open-update-window). Open the update window for profile updates.
 
-3) [Create business user profile - directors data](#user-profiles-add-business-directors)
+3) [Create business user profile – address data](#addresses-create). Add address information to the business user profile.
 
-3) [Create business user profile - owners data](#user-profiles-add-business-ultimate-beneficial-owners)
+4) [Create business user profile - directors data](#user-profiles-add-business-directors). Add information about directors.
 
+5) [Create business user profile - owners data](#user-profiles-add-business-ultimate-beneficial-owners). Add information about ultimate buiness owners.
 
-Currently we do not support a fully automated business onboarding flow over the API - this feature is coming soon, please contact the TransferWise team for more details.
+6) [Close update window](#user-profiles-close-update-window). Close the update window for profile updates.
+
 
 ## Create quote
 Please look at [Create quote](#quotes-create) under Full API Reference.
