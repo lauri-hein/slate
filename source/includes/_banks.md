@@ -276,7 +276,7 @@ There are three steps to creating a new personal user profile:
 
 A personal profile has to be created first. You can’t create a business user profile without a personal profile.
 
-Creating a business profile is similar to how you created personal profile. There are two steps:
+Creating a business profile is similar to how you created personal profile. There are four steps:
 
 1) [Create business user profile – general data](#user-profiles-create-business)
 

@@ -342,14 +342,14 @@ curl -X GET https://api.sandbox.transferwise.tech/v1/profiles/{profileId}/direct
 ```json
 [
   {
-    "id": <director id>,
+    "id": 10,
     "firstName": "John",
     "lastName": "Doe",
     "dateOfBirth": "1982-05-20",
     "countryOfResidenceIso3Code": "usa"
   },
   {
-    "id": <director id>,
+    "id": 11,
     "firstName": "Jane",
     "lastName": "Doe",
     "dateOfBirth": "1981-12-07",
@@ -392,21 +392,21 @@ curl -X POST https://api.sandbox.transferwise.tech/v1/profiles/{profileId}/direc
 ```json
 [
     {
-        "id": <director id>,
+        "id": 10,
         "firstName": "John",
         "lastName": "Doe",
         "dateOfBirth": "1982-05-20",
         "countryOfResidenceIso3Code": "usa"
     },
     {
-        "id": <director id>,
+        "id": 11,
         "firstName": "Jane",
         "lastName": "Doe",
         "dateOfBirth": "1981-12-07",
         "countryOfResidenceIso3Code": "usa"
     },
     {
-        "id": <director id>,
+        "id": 7,
         "firstName": "Oliver",
         "lastName": "Wilson",
         "dateOfBirth": "2017-12-31",
@@ -450,14 +450,14 @@ curl -X PUT https://api.sandbox.transferwise.tech/v1/profiles/{profileId}/direct
 ```json
 [
     {
-        "id": <director id>,
+        "id": 14,
         "firstName": "John",
         "lastName": "Doe",
         "dateOfBirth": "1982-05-20",
         "countryOfResidenceIso3Code": "usa"
     },
     {
-        "id": <director id>,
+        "id": 15,
         "firstName": "Jane",
         "lastName": "Doe",
         "dateOfBirth": "1981-12-07",
@@ -486,21 +486,21 @@ curl -X GET https://api.sandbox.transferwise.tech/v1/profiles/{profileId}/ubos \
 ```json
 [
     {
-        "id": <shareholder id>,
+        "id": "013ab1c2688d0185b582ee7e0bcb28b2",
         "name": "John Doe",
         "dateOfBirth": "1982-05-20",
         "countryOfResidenceIso3Code": "usa",
-        "addressFirstLine": "87 West Central St",
-        "postCode": "MI 48601",
+        "addressFirstLine": "123 Fake St",
+        "postCode": "FK 12345",
         "ownershipPercentage": 30
     },
     {
-        "id": <shareholder id>,
+        "id": "912ce3f31c8b3a10572137e78417caa3",
         "name": "Jane Doe",
         "dateOfBirth": "1981-12-07",
         "countryOfResidenceIso3Code": "usa",
-        "addressFirstLine": "140 Wild Rose Dr.",
-        "postCode": "MI 25887",
+        "addressFirstLine": "125 Fake St",
+        "postCode": "FK 12545",
         "ownershipPercentage": 70
     }
 ]
@@ -524,16 +524,16 @@ curl -X POST https://api.sandbox.transferwise.tech/v1/profiles/{profileId}/ubos 
                  "name": "John Doe",
                  "dateOfBirth": "1982-05-20",
                  "countryOfResidenceIso3Code": "usa",
-                 "addressFirstLine": "87 West Central St",
-                 "postCode": "MI 48601",
+                 "addressFirstLine": "123 Fake St",
+                 "postCode": "FK 12345",
                  "ownershipPercentage": 30
              },
              {
                  "name": "Jane Doe",
                  "dateOfBirth": "1981-12-07",
                  "countryOfResidenceIso3Code": "usa",
-                 "addressFirstLine": "140 Wild Rose Dr.",
-                 "postCode": "MI 25887",
+                 "addressFirstLine": "125 Fake St",
+                 "postCode": "FK 12545",
                  "ownershipPercentage": 40
              }
         ]'
@@ -544,30 +544,30 @@ curl -X POST https://api.sandbox.transferwise.tech/v1/profiles/{profileId}/ubos 
 ```json
 [
      {
-         "id": <shareholder id>,
+         "id": "f3e71aa1c97448d0b1eb5bdc0bacdcce",
          "name": "John Doe",
          "dateOfBirth": "1982-05-20",
          "countryOfResidenceIso3Code": "usa",
-         "addressFirstLine": "87 West Central St",
-         "postCode": "MI 48601",
+         "addressFirstLine": "123 Fake St",
+         "postCode": "FK 12345",
          "ownershipPercentage": 30
      },
      {
-         "id": <shareholder id>,
+         "id": "c6008d58a1664413b4c4dcacec1377f4",
          "name": "Jane Doe",
          "dateOfBirth": "1981-12-07",
          "countryOfResidenceIso3Code": "usa",
-         "addressFirstLine": "140 Wild Rose Dr.",
-         "postCode": "MI 25887",
+         "addressFirstLine": "125 Fake St",
+         "postCode": "FK 12545",
          "ownershipPercentage": 40
      },
      {
-         "id": <shareholder id>,
+         "id": "63bbdd1cf5ec4dd587597e74dbace376",
          "name": "Oliver Wilson",
          "dateOfBirth": "2017-12-31",
          "countryOfResidenceIso3Code": "gbr",
-         "addressFirstLine": "22 Baker St",
-         "postCode": "NW1 JA6",
+         "addressFirstLine": "222 Fake St",
+         "postCode": "FK 22222",
          "ownershipPercentage": 30
      }
 ]
@@ -592,16 +592,16 @@ curl -X PUT https://api.sandbox.transferwise.tech/v1/profiles/{profileId}/ubos \
                  "name": "John Doe",
                  "dateOfBirth": "1982-05-20",
                  "countryOfResidenceIso3Code": "usa",
-                 "addressFirstLine": "87 West Central St",
-                 "postCode": "MI 48601",
+                 "addressFirstLine": "123 Fake St",
+                 "postCode": "FK 12345",
                  "ownershipPercentage": 30
              },
              {
                  "name": "Jane Doe",
                  "dateOfBirth": "1981-12-07",
                  "countryOfResidenceIso3Code": "usa",
-                 "addressFirstLine": "140 Wild Rose Dr.",
-                 "postCode": "MI 25887",
+                 "addressFirstLine": "125 Fake St",
+                 "postCode": "FK 12545",
                  "ownershipPercentage": 70
              }
         ]'
@@ -612,21 +612,21 @@ curl -X PUT https://api.sandbox.transferwise.tech/v1/profiles/{profileId}/ubos \
 ```json
 [
      {
-         "id": <shareholder id>,
+         "id": "ff01cf3f206b40c090a14a1e51163e9e",
          "name": "John Doe",
          "dateOfBirth": "1982-05-20",
          "countryOfResidenceIso3Code": "usa",
-         "addressFirstLine": "87 West Central St",
-         "postCode": "MI 48601",
+         "addressFirstLine": "123 Fake St",
+         "postCode": "FK 12545",
          "ownershipPercentage": 30
      },
      {
-         "id": <shareholder id>,
+         "id": "c36b687d28ad44ad8c3864411f5f2612",
          "name": "Jane Doe",
          "dateOfBirth": "1981-12-07",
          "countryOfResidenceIso3Code": "usa",
-         "addressFirstLine": "140 Wild Rose Dr.",
-         "postCode": "MI 25887",
+         "addressFirstLine": "125 Fake St",
+         "postCode": "FK 12545",
          "ownershipPercentage": 70
      }
 ]
@@ -653,9 +653,9 @@ curl -X POST https://api.sandbox.transferwise.tech/v1/profiles/{profileId}/updat
 
 ```
 
-Opens the update window for updating the business profile information: details, directors, owners.
+Opens the update window for updating the profile information: details, addresses, directors, owners, others.
 
-### Request (Business)
+### Request
 **`POST https://api.sandbox.transferwise.tech/v1/profiles/{profileId}/update-window`**
 
 
@@ -674,7 +674,7 @@ curl -X DELETE https://api.sandbox.transferwise.tech/v1/profiles/{profileId}/upd
 
 ```
 
-Deletes the update window for updating the business profile.
+Deletes the update window for updating the profile.
 
-### Request (Business)
+### Request
 **`POST https://api.sandbox.transferwise.tech/v1/profiles/{profileId}/update-window`**
