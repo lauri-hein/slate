@@ -428,7 +428,7 @@ dateOfBirth                | Date of birth                 | YYYY-MM-DD
 countryOfResidenceIso3Code | 3 character country code      | Text
 
 
-## Replace business directors
+## Update business directors
 
 > Example Request:
 
@@ -602,7 +602,7 @@ postCode                   | Address post code              | Text
 ownershipPercentage        | Percentage of ownership        | Integer
 
 
-## Replace business ultimate beneficial owners
+## Update business ultimate beneficial owners
 
 > Example Request:
 
@@ -654,7 +654,7 @@ curl -X PUT https://api.sandbox.transferwise.tech/v1/profiles/{profileId}/ubos \
      }
 ]
 ```
-Replaces ultimate beneficial owners in the business profile.
+Overrides ultimate beneficial owners in the business profile.
 Returns the list of all ultimate beneficial owners associated with the business profile.
 
 ### Request (Business)

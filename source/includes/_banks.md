@@ -267,11 +267,11 @@ There are three steps to creating a new personal user profile:
 
 1) [Create personal user profile – general data](#user-profiles-create-personal). This includes customer name, date of birth, and phone number. 
 
-2) [Open update window](#user-profiles-open-update-window). Open the update window for profile updates.
+2) [Open update window](#user-profiles-open-update-window). Open the update window for the profile updates.
 
 3) [Create personal user profile – address data](#addresses-create). Add address information to the personal user profile.
 
-4) [Close update window](#user-profiles-close-update-window). Close the update window for profile updates.
+4) [Close update window](#user-profiles-close-update-window). Close the update window for the profile updates.
 
 ## Create business user profile
 A personal profile has to be created first. You can’t create a business user profile without a personal profile.
@@ -280,15 +280,15 @@ Creating a business profile is similar to how you created personal profile. Ther
 
 1) [Create business user profile – general data](#user-profiles-create-business). This includes business name, type and other. 
 
-2) [Open update window](#user-profiles-open-update-window). Open the update window for profile updates.
+2) [Open update window](#user-profiles-open-update-window). Open the update window for the profile updates.
 
 3) [Create business user profile – address data](#addresses-create). Add address information to the business user profile.
 
-4) [Create business user profile - directors data](#user-profiles-add-business-directors). Add information about directors.
+4) [Create business user profile - directors data](#user-profiles-add-business-directors). Add ultimate business directors information to the business user profile.
 
-5) [Create business user profile - owners data](#user-profiles-add-business-ultimate-beneficial-owners). Add information about ultimate buiness owners.
+5) [Create business user profile - owners data](#user-profiles-add-business-ultimate-beneficial-owners). Add ultimate business owners information to the business user profile.
 
-6) [Close update window](#user-profiles-close-update-window). Close the update window for profile updates.
+6) [Close update window](#user-profiles-close-update-window). Close the update window for the profile updates.
 
 
 ## Create quote
@@ -323,6 +323,28 @@ Please look at [Track transfer status](#transferwise-payouts-guide-track-transfe
  
 ## Get updated transfer delivery time estimate
 Please look at [Get transfer delivery time](#transferwise-payouts-guide-get-transfer-delivery-time) under TransferWise Payouts Guide.
+
+## Updating personal profile
+When user data changes the personal profile information must be updated.
+
+1) [Open update window](#user-profiles-open-update-window). Open the update window for profile updates.
+
+2) [Update personal profile - general data](#user-profiles-update). Update the personal profile data.
+ 
+3) [Close update window](#user-profiles-close-update-window). Close the update window for profile updates.
+ 
+## Updating business profile
+When business data changes the business profile information must be updated.
+
+1) [Open update window](#user-profiles-open-update-window). Open the update window for profile updates.
+
+2) [Update business profile - general data](#user-profiles-update). Update the business profile data.
+
+3) [Update business profile - directors data](#user-profiles-update-business-directors). Update directors information in the business user profile.
+
+3) [Update business profile - owner data](#user-profiles-update-business-ultimate-beneficial-owners). Update ultimate business owners information in the business user profile.
+ 
+4) [Close update window](#user-profiles-close-update-window). Close the update window for profile updates.
 
 ## Edge case handling
 This section discusses some edge cases that you should test and handle before going live with your integration.
