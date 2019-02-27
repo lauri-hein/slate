@@ -8,7 +8,7 @@ The credentials are needed to complete the authorisation_code grant type of OAut
 We also need *redirect_url* from your technical team so that we can limit our callbacks to only that URL, this is URL that we will forward users to after successfully granting your application access to their TransferWise account. Specifying this explicitly makes the integration more secure.
 [OAuth 2.0: The Complete Guide](https://auth0.com/blog/oauth2-the-complete-guide/) is a great way to refresh your knowledge about the protocol itself.
 
-### Sandbox and LIVE environments
+### SANDBOX and LIVE environments
 
 * Sandbox API is located at https://api.sandbox.transferwise.tech
 * LIVE API is located at https://api.transferwise.com
