@@ -276,17 +276,17 @@ There are three steps to creating a new personal user profile:
 ## Create business user profile
 A personal profile has to be created first. You can’t create a business user profile without a personal profile.
 
-Creating a business profile is similar to how you created personal profile. There are four steps:
+Creating a business profile is similar to how you created a personal profile. There are four steps:
 
-1) [Create business user profile – general data](#user-profiles-create-business). This includes business name, type and other. 
+1) [Create business user profile – general data](#user-profiles-create-business). This includes business name, type and other information. 
 
 2) [Open update window](#user-profiles-open-update-window). Open the update window for the profile updates.
 
 3) [Create business user profile – address data](#addresses-create). Add address information to the business user profile.
 
-4) [Create business user profile - directors data](#user-profiles-add-business-directors). Add ultimate business directors information to the business user profile.
+4) [Create business user profile - director data](#user-profiles-add-business-directors). Add business director information to the business user profile.
 
-5) [Create business user profile - owners data](#user-profiles-add-business-ultimate-beneficial-owners). Add ultimate business owners information to the business user profile.
+5) [Create business user profile - UBO data](#user-profiles-add-business-ultimate-beneficial-owners). Add ultimate business owner information to the business user profile.
 
 6) [Close update window](#user-profiles-close-update-window). Close the update window for the profile updates.
 
