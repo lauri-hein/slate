@@ -342,7 +342,7 @@ When business data changes the business profile information must be updated.
 
 3) [Update business profile - directors data](#user-profiles-update-business-directors). Update directors information in the business user profile.
 
-3) [Update business profile - owner data](#user-profiles-update-business-ultimate-beneficial-owners). Update ultimate business owners information in the business user profile.
+3) [Update business profile - UBO data](#user-profiles-update-business-ultimate-beneficial-owners). Update ultimate business owners information in the business user profile.
  
 4) [Close update window](#user-profiles-close-update-window). Close the update window for profile updates.
 
