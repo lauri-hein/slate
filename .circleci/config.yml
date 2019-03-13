@@ -9,9 +9,17 @@ jobs:
     steps:
       - checkout
       - run: bundle install
-  deploy:
+  build:
     <<: *defaults
     steps:
+      - attach_workspace:
+          at: ~/api-docs
+      - run: bundle exec middleman build --clean
+  build_and_deploy:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/api-docs
       - run: ./deploy.sh
 
 workflows:
@@ -19,12 +27,15 @@ workflows:
   release:
     jobs:
       - install:
-          filters:
-            branches:
-              only: ci
-      - deploy:
+      - build:
           requires:
             - install
           filters:
             branches:
-              only: ci
+              ignore: master
+      - build_and_deploy:
+          requires:
+            - install
+          filters:
+            branches:
+              only: master
