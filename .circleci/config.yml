@@ -4,10 +4,6 @@ defaults: &defaults
     - image: circleci/ruby:2.4.1-node-browsers
 version: 2
 jobs:
-  install:
-    <<: *defaults
-    steps:
-      - run: bundle install
   deploy:
     <<: *defaults
     steps:
@@ -17,13 +13,7 @@ workflows:
   version: 2
   release:
     jobs:
-      - install:
-          filters:
-            branches:
-              only: ci
       - deploy:
-          requires:
-            - install
           filters:
             branches:
               only: ci
