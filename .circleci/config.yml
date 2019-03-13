@@ -1,0 +1,20 @@
+version: 2
+jobs:
+  install_and_deploy:
+    docker:
+       - image: circleci/ruby:2.4.1-node-browsers
+
+    working_directory: ~/api-docs
+
+    steps:
+      - run: bundle install
+      - run: ./deploy.sh
+
+workflows:
+  version: 2
+  release:
+    jobs:
+      - install_and_deploy:
+          filters:
+            branches:
+              only: ci
