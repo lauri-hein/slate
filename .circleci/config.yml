@@ -9,6 +9,10 @@ jobs:
     steps:
       - checkout
       - run: bundle install
+      - persist_to_workspace:
+          root: .
+          paths:
+            - '*'
   build:
     <<: *defaults
     steps:
