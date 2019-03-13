@@ -26,7 +26,7 @@ workflows:
   version: 2
   release:
     jobs:
-      - install:
+      - install
       - build:
           requires:
             - install
