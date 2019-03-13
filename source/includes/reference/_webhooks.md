@@ -199,7 +199,7 @@ Deactivate a subscription.
 
 ## Events
 
-Events describe payload that will be sent to your server in a form of a `POST` request. They will not contain any personally identifiable information. To acknowledge succesfully processed event, make sure your server answers with a status code `200`. Otherwise, we will try to resend the notification 3 times consequently.
+Events describe payload that will be sent to your server in a form of a `POST` request. They will not contain any personally identifiable information. To acknowledge succesfully processed event, make sure your server answers with a status code `200` within 5s. Otherwise, we will try to resend the notification 3 times consequently.
 
 ## Test event
 
