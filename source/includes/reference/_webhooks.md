@@ -287,6 +287,6 @@ Field                     | Description                                   | Form
 ---------                 | -------                                       | -----------
 subscriptionId            | ID of subscription that triggers this notification | String
 profileId                 | ID of the profile that owns the balance       | Integer
-amount                    | Deposit amount                                | Integer
+amount                    | Deposit amount                                | Decimal
 currency                  | Currency of the balance that got updated      | String
 eventType                 | Type of update                                | String
