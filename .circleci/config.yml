@@ -1,20 +1,29 @@
+defaults: &defaults
+  working_directory: ~/api-docs
+  docker:
+    - image: circleci/ruby:2.4.1-node-browsers
 version: 2
 jobs:
-  install_and_deploy:
-    docker:
-       - image: circleci/ruby:2.4.1-node-browsers
-
-    working_directory: ~/api-docs
-
+  install:
+    <<: *defaults
     steps:
       - run: bundle install
+  deploy:
+    <<: *defaults
+    steps:
       - run: ./deploy.sh
 
 workflows:
   version: 2
   release:
     jobs:
-      - install_and_deploy:
+      - install:
+          filters:
+            branches:
+              only: ci
+      - deploy:
+          requires:
+            - install
           filters:
             branches:
               only: ci
