@@ -47,7 +47,14 @@ jobs:
       - add_ssh_keys:
           fingerprints:
             - "dd:14:8e:27:13:02:e4:47:df:3c:2c:f9:4b:7c:00:69"
-      - run: ./deploy.sh
+      - run:
+          name: Deploy docs
+          command: |
+            mkdir ~/.ssh
+            ssh-keyscan github.com >> ~/.ssh/known_hosts
+            git config --global user.email "circleci@transferwise.com"
+            git config --global user.name "CircleCI"
+            ./deploy.sh
 
 workflows:
   version: 2
