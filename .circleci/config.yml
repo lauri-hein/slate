@@ -41,19 +41,13 @@ jobs:
       - run: bundle exec middleman build --clean
   build_and_deploy:
     <<: *defaults
-    machine:
-      enabled: true
     steps:
       - attach_workspace:
           at: ~/api-docs
-      - run:
-          name: Add ssh key and run deploy
-          command: |
-            mkdir ~/.ssh
-            ssh-keyscan github.com >> ~/.ssh/known_hosts
-            git config --global user.email "circleci@transferwise.com"
-            git config --global user.name "CircleCI"
-            ./deploy.sh
+      - add_ssh_keys:
+          fingerprints:
+            - "dd:14:8e:27:13:02:e4:47:df:3c:2c:f9:4b:7c:00:69"
+      - run: ./deploy.sh
 
 workflows:
   version: 2
