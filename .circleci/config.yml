@@ -44,6 +44,7 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/api-docs
+      - add_ssh_keys
       - run: ./deploy.sh
 
 workflows:
@@ -62,4 +63,4 @@ workflows:
             - install
           filters:
             branches:
-              only: master
+              only: ci
