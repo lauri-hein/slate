@@ -41,6 +41,8 @@ jobs:
       - run: bundle exec middleman build --clean
   build_and_deploy:
     <<: *defaults
+    machine:
+      enabled: true
     steps:
       - attach_workspace:
           at: ~/api-docs
