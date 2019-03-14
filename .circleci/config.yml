@@ -48,7 +48,7 @@ jobs:
 
 workflows:
   version: 2
-  release:
+  build_and_release:
     jobs:
       - install
       - build:
