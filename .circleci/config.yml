@@ -71,4 +71,4 @@ workflows:
             - install
           filters:
             branches:
-              only: ci
+              only: master
