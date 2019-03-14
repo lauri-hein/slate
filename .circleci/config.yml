@@ -44,8 +44,14 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/api-docs
-      - add_ssh_keys
-      - run: ./deploy.sh
+      - run:
+          name: Add ssh key and run deploy
+          command: |
+            mkdir ~/.ssh
+            ssh-keyscan github.com >> ~/.ssh/known_hosts
+            git config --global user.email "circleci@transferwise.com"
+            git config --global user.name "CircleCI"
+            ./deploy.sh
 
 workflows:
   version: 2
