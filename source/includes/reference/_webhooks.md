@@ -263,7 +263,7 @@ Field                     | Description                                   | Form
 subscriptionId            | ID of subscription that triggers this notification | String
 profileId                 | ID of the profile that owns the resource      | Integer
 resourceId                | ID of the resource that got updated           | Integer
-status                    | New status of the resource, possible values are same as [transfer statuses](#transferwise-payouts-guide-track-transfer-status)               | String
+status                    | New status of the resource, possible values are same as [transfer statuses](#payouts-guide-track-transfer-status)               | String
 eventTime                 | Timestamp when update happened                | Timestamp
 
 ## Balance deposit event
