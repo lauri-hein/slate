@@ -317,7 +317,7 @@ curl -X POST https://api.sandbox.transferwise.tech/v1/profiles/{profileId}/verif
 Add identification document details to user profile. Applicable to personal profiles (not business) only.  
 Returns empty result if successful. 
 
-When sending a social security number (SSN) only `type` and `uniqueIdentifier` (only digits) are required.
+When sending a social security number (SSN) only `type` and `uniqueIdentifier` (only 9 digits no letter or symbols) are required.
 
 
 ### Request (Business)
