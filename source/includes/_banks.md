@@ -86,11 +86,11 @@ Your website or app opens the following url in the user's browser.
 
 Sandbox:  
 `
-https://sandbox.transferwise.tech/oauth/authorize?response_type=code&client_id=<your api client id>&redirect_uri=https://www.yourbank.com
+https://sandbox.transferwise.tech/oauth/authorize/?response_type=code&client_id=<your api client id>&redirect_uri=https://www.yourbank.com
 ` <br/>
 Live:  
 `
-https://transferwise.com/oauth/authorize?response_type=code&client_id=<your api client id>&redirect_uri=https://www.yourbank.com
+https://transferwise.com/oauth/authorize/?response_type=code&client_id=<your api client id>&redirect_uri=https://www.yourbank.com
 `
 
 Replace *your-api-client-id* and *redirect-uri* with your specific values. 

@@ -40,11 +40,11 @@ Your website or app opens the following url in the user's browser.
 
 Sandbox:  
 `
-https://sandbox.transferwise.tech/oauth/authorize?response_type=code&client_id=<your api client id>&redirect_uri=https://www.yourapp.com
+https://sandbox.transferwise.tech/oauth/authorize/?response_type=code&client_id=<your api client id>&redirect_uri=https://www.yourapp.com
 ` <br/>
 Live:  
 `
-https://transferwise.com/oauth/authorize?response_type=code&client_id=<your api client id>&redirect_uri=https://www.yourapp.com
+https://transferwise.com/oauth/authorize/?response_type=code&client_id=<your api client id>&redirect_uri=https://www.yourapp.com
 `
 
 Replace *your-api-client-id* and *redirect-uri* with your specific values. 
