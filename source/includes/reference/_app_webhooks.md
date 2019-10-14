@@ -11,11 +11,32 @@ Before proceeding, make sure the endpoint where you intend to receive webhooks s
 
 `https://webhooks.example.com/balance-change` is a valid URL; `http://webhooks.example.com:8080/hook.php?type=balance` is not.
 
-You can have multiple subscriptions per event type though be mindful you will receive duplicate callbacks, one for each subscription.
+You can have multiple subscriptions per event type though be mindful you will receive duplicate callbacks, one for each subscription. Find out more about webhook events [here](#webhook-events).
 
 > **Please note that you have to use a client level token for making following requests.**
 
-Find out more about webhook events [here](#webhook-events).
+## Client token
+
+### Request
+
+**`POST https://api.sandbox.transferwise.tech/oauth/token`**
+
+Use Basic Authentication with your api-client-id/api-client-secret as username/pwd and also use the header `Content-Type: application/x-www-form-urlencoded`.
+
+
+Field                 | Description                                   | Format
+---------             | -------                                       | -----------
+grant_type            | "client_credentials"                          | Text
+
+### Response
+
+Field                 | Description                                   | Format
+---------             | -------                                       | -----------
+access_token          | Access token to be used when creating an application subscription. Valid for 12 hours. | uuid
+token_type            | "bearer"                                      | Text
+expires_in            | Expiry time in seconds                        | Integer
+scope                 |                                               | Text
+
 
 ## Create
 
@@ -67,12 +88,12 @@ curl -X POST "https://api.transferwise.com/v3/applications/{clientKey}/subscript
 
 All fields listed below are required for creating a webhook subscription.
 
-Field                     | Description                                                             | Format
----------                 | -------                                                                 | -----------
-name                      | A custom name for your webhook to ease with identification              | Text
-trigger_on                | [choose from a list of available events](#webhook-events) | Text
-delivery.version          | The event representation semantic version                                       | Text
-delivery.url              | Required. The URL where your server will be listening for events.       | Text
+Field                     | Description                                                       | Format
+---------                 | -------                                                           | -----------
+name                      | A custom name for your webhook to ease with identification        | Text
+trigger_on                | [Choose from a list of available events](#webhook-events)         | Text
+delivery.version          | The event representation semantic version                         | Text
+delivery.url              | Required. The URL where your server will be listening for events. | Text
 
 
 ### Response
@@ -83,7 +104,7 @@ id                        | UUID that uniquely identifies the subscription      
 name                      | A custom name for your webhook to ease with identification              | Text
 trigger_on                | `transfers#state-change`, `transfers#active-cases` or `balances#credit` | Text
 delivery.version          | The event representation semantic version                                       | Text
-delivery.url              | Required. The URL where your server will be listening for events.       | Text
+delivery.url              | The URL where your server will be listening for events.       | Text
 scope.domain              | Scope of this subscription, always "application" in this case           | Text
 scope.id                  | Client key used to create this subscription                             | Text
 created\_by.type          | Creator type. Always application in this case                           | Text

@@ -11,9 +11,7 @@ Before proceeding, make sure the endpoint where you intend to receive webhooks s
 
 `https://webhooks.example.com/balance-change` is a valid URL; `http://webhooks.example.com:8080/hook.php?type=balance` is not.
 
-You can have multiple subscriptions per event type though be mindful you will receive duplicate callbacks, one for each subscription.
-
-Find out more about webhook events [here](#webhook-events).
+You can have multiple subscriptions per event type though be mindful you will receive duplicate callbacks, one for each subscription. Find out more about webhook events [here](#webhook-events).
 
 ## Create
 
@@ -68,7 +66,7 @@ All fields listed below are required for creating a webhook subscription.
 Field                     | Description                                                             | Format
 ---------                 | -------                                                                 | -----------
 name                      | A custom name for your webhook to ease with identification              | Text
-trigger_on                | [choose from a list of available events](#webhook-events) | Text
+trigger_on                | [Choose from a list of available events](#webhook-events) | Text
 delivery.version          | The event representation semantic                                       | Text
 delivery.url              | Required. The URL where your server will be listening for events.       | Text
 
