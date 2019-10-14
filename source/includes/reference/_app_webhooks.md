@@ -4,7 +4,7 @@ Application webhook subscription is a mechanism that will allow you to receive n
 
 Before proceeding, make sure the endpoint where you intend to receive webhooks satisfies the following requirements:
 
-* Has a valid domain name (IPs are disallowed)
+* Has a valid domain name (IP addresses are disallowed)
 * Listens to HTTPS requests on port `443`
 * Has a valid HTTPS certificate signed by a trusted Certificate Authority - CA (self-signed or expired certificates are not accepted)
 * Does not include any query arguments in the URL
@@ -13,7 +13,7 @@ Before proceeding, make sure the endpoint where you intend to receive webhooks s
 
 You can have multiple subscriptions per event type though be mindful you will receive duplicate callbacks, one for each subscription.
 
-> **NB! Please note that you have to use client level token for making following requests.**
+> **Please note that you have to use a client level token for making following requests.**
 
 Find out more about webhook events [here](#webhook-events).
 
@@ -53,9 +53,9 @@ curl -X POST "https://api.transferwise.com/v3/applications/{clientKey}/subscript
     },
     "created_by": {
         "type": "application",
-        "id": "<your client id>", //clientId and key are not always the same
+        "id": "<your client ID>", //clientId and key are not always the same
     },
-    "created_at": "2008-09-15T15:53:00+00:00Z",
+    "created_at": "2019-10-10T13:55:57Z"
 }
 ```
 
@@ -70,8 +70,8 @@ All fields listed below are required for creating a webhook subscription.
 Field                     | Description                                                             | Format
 ---------                 | -------                                                                 | -----------
 name                      | A custom name for your webhook to ease with identification              | Text
-trigger_on                | `transfers#state-change`, `transfers#active-cases` or `balances#credit` | Text
-delivery.version          | The event representation semantic                                       | Text
+trigger_on                | [choose from a list of available events](#webhook-events) | Text
+delivery.version          | The event representation semantic version                                       | Text
 delivery.url              | Required. The URL where your server will be listening for events.       | Text
 
 
@@ -82,12 +82,12 @@ Field                     | Description                                         
 id                        | UUID that uniquely identifies the subscription                          | Text
 name                      | A custom name for your webhook to ease with identification              | Text
 trigger_on                | `transfers#state-change`, `transfers#active-cases` or `balances#credit` | Text
-delivery.version          | The event representation semantic                                       | Text
+delivery.version          | The event representation semantic version                                       | Text
 delivery.url              | Required. The URL where your server will be listening for events.       | Text
 scope.domain              | Scope of this subscription, always "application" in this case           | Text
 scope.id                  | Client key used to create this subscription                             | Text
 created\_by.type          | Creator type. Always application in this case                           | Text
-created\_by.id            | Client id of the creator. Not always the same as the client key         | Text
+created\_by.id            | Client ID of the creator. Not always the same as the client key         | Text
 created\_at               | Timestamp of when the subscription was created                          | Text
 
 ## Delete
@@ -141,7 +141,7 @@ curl -X GET "https://api.transferwise.com/v3/applications/{clientKey}/subscripti
     },
     "created_by": {
         "type": "application",
-        "id": "<your client id>", //clientId and key are not always the same
+        "id": "<your client ID>", //clientId and key are not always the same
     },
     "created_at": "2008-09-15T15:53:00+00:00Z",
 }
@@ -177,7 +177,7 @@ curl -X GET "https://api.transferwise.com/v3/applications/{clientKey}/subscripti
     "trigger_on": "transfers#state-change",
     "created_by": {
       "type": "application",
-      "id": "<your client id>"
+      "id": "<your client ID>"
     },
     "scope": {
       "domain": "application",
@@ -194,7 +194,7 @@ curl -X GET "https://api.transferwise.com/v3/applications/{clientKey}/subscripti
     "trigger_on": "transfers#state-change",
     "created_by": {
       "type": "application",
-      "id": "<your client id>"
+      "id": "<your client ID>"
     },
     "scope": {
       "domain": "application",

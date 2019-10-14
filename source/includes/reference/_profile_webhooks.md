@@ -68,7 +68,7 @@ All fields listed below are required for creating a webhook subscription.
 Field                     | Description                                                             | Format
 ---------                 | -------                                                                 | -----------
 name                      | A custom name for your webhook to ease with identification              | Text
-trigger_on                | `transfers#state-change`, `transfers#active-cases` or `balances#credit` | Text
+trigger_on                | [choose from a list of available events](#webhook-events) | Text
 delivery.version          | The event representation semantic                                       | Text
 delivery.url              | Required. The URL where your server will be listening for events.       | Text
 
