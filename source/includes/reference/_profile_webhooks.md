@@ -100,8 +100,7 @@ curl -X DELETE "https://api.transferwise.com/v3/profiles/{profileId}/subscriptio
 > Example Response:
 
 ```json
-{
-}
+
 ```
 
 ### Request

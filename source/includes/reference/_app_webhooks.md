@@ -125,8 +125,7 @@ curl -X DELETE "https://api.transferwise.com/v3/applications/{clientKey}/subscri
 > Example Response:
 
 ```json
-{
-}
+
 ```
 
 ### Request
