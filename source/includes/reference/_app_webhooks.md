@@ -1,6 +1,6 @@
 # Application Webhooks
 
-Application webhook subscription is a mechanism that will allow you to receive notifications to your servers whenever various events happen in relation to different resources created by an ***application***. You can subscribe to receive webhooks about resource created under a specific [***profile***](#profile-webhooks).
+Application webhook subscription is a mechanism that will allow you to receive notifications to your servers whenever various events happen in relation to different resources created by an ***application***.
 
 Before proceeding, make sure the endpoint where you intend to receive webhooks satisfies the following requirements:
 
