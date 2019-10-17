@@ -1,5 +1,5 @@
 # Webhooks (v1)
-#### Please note this version of webhooks is now **_deprecated_**. You can use (profile webhooks) or (application webhooks) instead.
+#### Please note this version of webhooks is now **_deprecated_**. You can use [profile webhooks](#profile-webhooks) or [application webhooks](#app-webhooks) instead.
 
 There's two ways you can manage webhooks:
 
