@@ -113,7 +113,7 @@ The [Affiliates Integration Guide](#affiliates-integration-guide) helps you get 
 
 With Connected Applications, you can let your customers connect their TransferWise accounts to your product. Say you’re an accounting software – doing this could let your customers automate reconciliation. If you’re a payroll company, you could push customer payments right into TransferWise. You could even push TransferWise notifications through your app. Whatever you want to build, you likely could!
 
-We need take a deeper look into your application use case and the added value it will bring to our joint customers in order to authorise such an integration. So before starting the technical work please contact [bizdev@transferwise.com](mailto:bizdev@transferwise.com) for more info on how to get started.
+We need to take a deeper look into your application use case and the added value it will bring to our joint customers in order to authorise such an integration. So before starting the technical work please contact [bizdev@transferwise.com](mailto:bizdev@transferwise.com) for more info on how to get started.
 
 Our [Connected Apps Guide](#connected-apps-guide) gives you an overview of required technical integration work.
 
