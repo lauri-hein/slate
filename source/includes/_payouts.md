@@ -256,7 +256,7 @@ Note that to prevent abuse the number of public keys you can have stored is limi
 **Signing the data**
 
 The digital signature algorithm we use is *SHA1 with RSA* (SHA1 hash of the data is signed with RSA). There are 
-alternative options for creating the required digital signature:
+different ways of creating the required digital signature, for example:
 
 > The shell one-liner to sign a string, encode it with Base64 and output to standard output:
 
@@ -278,12 +278,13 @@ $ printf '<string to sign>' | openssl sha1 -sign <path to private key.pem> | bas
 **Detailed workflow**
 
 1. Client makes a request which requires strong authentication.
-2. The request is declined with HTTP status `403 / Unauthorized` and the following headers 
+2. The request is declined with HTTP status `403 / Forbidden` and the following headers 
   * `X-2FA-Approval-Result`: `DECLINED`
   * `X-2FA-Approval` containing the one-time token (OTT) value which is what needs to be signed
 3. Client signs the OTT with the private key corresponding to a public key previously uploaded for 
 signature verification.
-4. Client repeats the initial request together with `X-Signature` header containing the signed OTT.   
+4. Client repeats the initial request with the OTT provided in the `X-2FA-Approval` header value and the signed OTT in 
+the `X-Signature` header value.  
 
 Note: as the name implies, a one-time token can be used only once. If it was successfully processed then further 
 requests with the same token signature will be rejected.
@@ -1115,8 +1116,8 @@ intervalEnd                           | Statement start time in UTC time        
 Note that you can also download statements in PDF and CSV formats if you replace statement.json with statement.csv or statement.pdf respectively in the above URL.
 
 **NB!** this endpoint is subject to [additional authentication requirements]
-(#payouts-guide-api-access-strong-customer-authentication). Those could be bypassed if viewing the statement on the 
-website once every 90 days.
+(#payouts-guide-api-access-strong-customer-authentication). The additional authentication is 
+only required once every 90 days, viewing the statement on the website or in the mobile app counts towards that as well.
 
 ### Response
 
