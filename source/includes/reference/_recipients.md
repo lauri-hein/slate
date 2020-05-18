@@ -1524,7 +1524,9 @@ curl -X POST "https://api.sandbox.transferwise.tech/v1/accounts" \
           "type": "iban",
           "details": {
            "legalType": "PRIVATE",
-           "IBAN": "CH89370400440532013000"
+           "IBAN": "CH89370400440532013000",
+           "town": "Zürich",
+           "postCode": 8037
            }
         }'
 ```
@@ -1536,6 +1538,18 @@ Private and business recipients are supported.
 Recipient type = *'iban'*
 
 Required details: IBAN
+
+<br/>
+
+<aside class="warning">
+<b>From 15th of Jun, 2020, requirements will change to the following:</b>
+</aside>
+
+Required details: IBAN, town, postcode
+
+Where town and postcode are the recipient's home town and postcode.
+
+If the recpient's country does not use a postcode, then please fill it with 0 (zero).
 
 ## Create CLP Recipient
 
