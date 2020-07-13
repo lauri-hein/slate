@@ -374,20 +374,73 @@ With the `access-token` from [Authorization Code Flow](#open-banking-4-exchange-
 
 `Authorization: Bearer xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx`
 
-As an AISP you'll be able to call the following endpoints
+<br /><br /><br /><br /><br /><br />
+
+## AISP Interfaces
 
 ### Accounts
 
-**`GET https://openbanking.sandbox.transferwise.tech/open-banking/v3.1/aisp/accounts`**
+Querying the accounts endpoint will return all the opened currency accounts of the consented user. 
 
-**`GET https://openbanking.sandbox.transferwise.tech/open-banking/v3.1/aisp/accounts/{id}`**
+**`GET /open-banking/v3.1/aisp/accounts`**
+
+**`GET /open-banking/v3.1/aisp/accounts/{id}`**
+
+**Note:** Not every Borderless Account opened in TransferWise has a unique set of bank details attached to it. Therefor, it's expected that some of the currency accounts returned will have an empty `OBReadAccount3/Data/Account/Account`. We encourage AISPs to instead use the unique id `OBReadAccount3/Data/Account/AccountId` for identifying different accounts. There's nothing inherently different between accounts with and without bank details, you can call the **Balances** and **Transactions** endpoints for either of them.
 
 ### Balances
 
-**`GET https://openbanking.sandbox.transferwise.tech/open-banking/v3.1/aisp/accounts/{id}/balances`**
+Querying the balances endpoint will return the current running balance of a specific account.
+
+**`GET /open-banking/v3.1/aisp/accounts/{id}/balances`**
 
 ### Transactions
 
-**`GET https://openbanking.sandbox.transferwise.tech/open-banking/v3.1/aisp/accounts/{id}/transactions`**
+Querying the transactions endpoint will return a list of transactions from within the consented time window.
 
-<br /><br /><br /><br /><br /><br />
+**`GET /open-banking/v3.1/aisp/accounts/{id}/transactions`**
+
+We are fully transparent about our transaction charges, so you will find fees attached to transactions in either of the following ways:
+
+* **Embedded** *[DEFAULT]*: Using the `OBReadTransaction5/Data/Transaction/ChargeAmount` object. Fees represented this way will be embedded into the transactions amount. This might make sense for most AISPs.
+* **Fee Split** : Showing fees as a separate DEBIT transactions with an attached reference to the original transaction. Fees represented this way will not be embedded in the original transaction amount. This might make sense for some AISPs, like accounting software.    
+
+## PISP Interfaces
+
+Every consent object created for initiating payments will have a **`CutOffDateTime`** attached which is set to be **30 minutes** after the creation of the consent. After the 30 minutes has lapsed, the Payment Order creation will be rejected. 
+
+We are supporting both **`UK.OBIE.SortCodeAccountNumber`** as well as **`UK.OBIE.IBAN`** for account identification.  
+
+### Domestic Payments
+
+**`POST /open-banking/v3.1/pisp/domestic-payments`**
+
+**`GET /open-banking/v3.1/pisp/domestic-payments/{id}`**
+
+The Domestic Payments endpoint can be used to initiate same currency transfers. You can initiate domestic payments in any of the [supported currencies](https://transferwise.com/gb/borderless/) by TransferWise, assuming the consenting user already holds an opened account in the requested currency. 
+
+### International Payments
+
+**`POST /open-banking/v3.1/pisp/international-payments`**
+
+**`GET /open-banking/v3.1/pisp/international-payments/{id}`**
+
+The International Payments endpoint can be used to initiate transfers where the source currency is different than the target currency. You can use it to initiate payment with:
+
+* Fixed **Source** Amount : `OBInternational2/InstructedAmount/Currency` and `OBInternational2/CurrencyOfTransfer` are different.
+
+    * The source currency and amount are specified using `OBInternational2/InstructedAmount` and it can be any of the [supported currencies](https://transferwise.com/gb/borderless/) by TransferWise, assuming the consenting user already holds an opened account in the requested currency.  
+    * The target currency of the transfer is specified using `OBInternational2/CurrencyOfTransfer`. The instructed amount will get converted to the CurrencyOfTransfer and sent out to the specified CreditorAccount.<br /><br />
+
+* Fixed **Target** Amount : `OBInternational2/InstructedAmount/Currency` and `OBInternational2/CurrencyOfTransfer` are the same.
+
+    * The source currency of the transfer can either be specified using `OBInternational2/ExchangeRateInformation/UnitCurrency`, or it can be left unspecified, allowing the TransferWise customer to choose one of his eligible currency accounts during the Authorization Flow. The customers' choice of source currency, the exchange rate used as well as any additional charges are clearly communicated to the customer as well as reflected to the TPP via the Payment Resource.
+    * The target currency and amount are specified using `OBInternational2/InstructedAmount`. 
+
+We are only supporting **INDICATIVE** `ExchangeRateInformation` during the creation of the International Payment Consent. The real exchange rate used, along with any fees will be clearly communicated to the customer during the consent authorization, as well as reflected to the PISP during the creation of the International Payment Resource.   
+
+## CBPII Interfaces
+
+**`POST /open-banking/v3.1/cbpii/funds-confirmations`**
+
+The confirmation of funds endpoint can be used to check whether the consented user has a specific amount on any of its [opened currency accounts](https://transferwise.com/gb/borderless/).
