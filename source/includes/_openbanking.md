@@ -380,7 +380,7 @@ With the `access-token` from [Authorization Code Flow](#open-banking-4-exchange-
 
 ### Accounts
 
-Querying the accounts endpoint will return all the opened currency accounts of the consented user. 
+Querying the accounts endpoint will return all open currency accounts of the consented user. 
 
 **`GET /open-banking/v3.1/aisp/accounts`**
 
