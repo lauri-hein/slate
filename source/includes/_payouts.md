@@ -14,7 +14,7 @@ Just follow these four steps.
 
 * Sign up for your TransferWise account [https://transferwise.com/gb/borderless](https://transferwise.com/gb/borderless). 
 
-* Complete verification – you need to do this before you start your technical integration. Also ensure you’re compliant with our [Terms and Conditions](https://transferwise.com/terms-and-conditions) and [Acceptable Use Policy](https://transferwise.com/acceptable-use-policy-eea). Also make sure two-step log in is set up.
+* Complete verification – you need to do this before you start your technical integration. Also ensure you’re compliant with our [Terms and Conditions](https://transferwise.com/terms-and-conditions) and [Acceptable Use Policy](https://transferwise.com/gb/legal/acceptable-use-policy-eea). Also make sure two-step log in is set up.
 
 * Activate at least one currency in your borderless account, deposit small amount (via card or bank transfer) and setup your first payment. 
 This penny-testing is not mandatory of course, but we do recommended it so you will understand how TransferWise payment flow works.   
