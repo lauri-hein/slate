@@ -163,20 +163,23 @@ details.accountNumber | Recipient bank account no (GBP example)               | 
 ### Response
 
 Recipient account id is needed for creating transfers in step 3.
+The profile ID you provided when creating your recipient will appear in the response.  However, some 
+older recipients may not have a profile ID specified.
 
-Field                 | Description                                           | Format
----------             | -------                                               | -----------
-id                    | accountId                                             | Integer
-profile               | Personal or business profile id                       | Integer
-acccountHolderName    | Recipient full name                                   | Text
-currency              | 3 character country code                              | Text
-country               | 2 character currency code                             | Text
-type                  | Recipient type                                        | Text
-ownedByCustomer       | Whether this account is owned by the sending user     | Text
-details               | Currency specific fields                              | Object
-details.legalType     | Recipient legal type                                  | Text
-details.sortCode      | Recipient bank sort code (GBP example)                | Text
-details.accountNumber | Recipient bank account no (GBP example)               | Text
+Field                 | Description                                           | Format        | Nullable
+---------             | -------                                               | -----------   | ----------- 
+id                    | accountId                                             | Integer       | false
+profile               | Personal or business profile id                       | Integer       | true
+user                  | User that created or owns this recipient              | Integer       | false
+acccountHolderName    | Recipient full name                                   | Text          | false
+currency              | 3 character country code                              | Text          | false
+country               | 2 character currency code                             | Text          | false
+type                  | Recipient type                                        | Text          | false
+ownedByCustomer       | Whether this account is owned by the sending user     | Text          | true
+details               | Currency specific fields                              | Object        | false
+details.legalType     | Recipient legal type                                  | Text          | true
+details.sortCode      | Recipient bank sort code (GBP example)                | Text          | Currency Dependent
+details.accountNumber | Recipient bank account no (GBP example)               | Text          | Currency Dependent
 
 
 ## Create Email Recipient
