@@ -153,7 +153,7 @@ currency              | 3 character currency code                             | 
 type                  | Recipient type                                        | Text          | false
 profile               | Personal or business profile id                       | Integer       | false
 accountHolderName     | Recipient full name                                   | Text          | false
-ownedByCustomer       | Whether this account is owned by the sending user     | Text          | true
+ownedByCustomer       | Whether this account is owned by the sending user     | Boolean       | true
 details               | Currency specific fields                              | Object        | false
 details.legalType     | Recipient legal type: PRIVATE or BUSINESS             | Text          | false
 details.sortCode      | Recipient bank sort code (GBP example)                | Text          | false
@@ -175,7 +175,7 @@ acccountHolderName    | Recipient full name                                   | 
 currency              | 3 character country code                              | Text          | false
 country               | 2 character currency code                             | Text          | false
 type                  | Recipient type                                        | Text          | false
-ownedByCustomer       | Whether this account is owned by the sending user     | Text          | true
+ownedByCustomer       | Whether this account is owned by the sending user     | Boolean       | false
 details               | Currency specific fields                              | Object        | false
 details.legalType     | Recipient legal type                                  | Text          | true
 details.sortCode      | Recipient bank sort code (GBP example)                | Text          | Currency Dependent
