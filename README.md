@@ -1,3 +1,5 @@
+# This is an old repo which is now archived, go to [api-documentation](https://github.com/transferwise/api-documentation) instead.
+
 # Transferwise API documentation
 
 Live version of the docs is [here](https://api-docs.transferwise.com).
