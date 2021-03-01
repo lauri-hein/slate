@@ -85,6 +85,12 @@ curl -X POST https://api.sandbox.transferwise.tech/v1/accounts \
         "idDocumentNumber": null,
         "targetProfile": null,
         "taxId": null,
+        "job": null,
+        "nationality": null,
+        "bban": null,
+        "town": null,
+        "postCode": null,
+        "language": null,
         "iban": null,
         "bic": null,
         "IBAN": null,
@@ -180,6 +186,7 @@ details               | Currency specific fields                              | 
 details.legalType     | Recipient legal type                                  | Text          | true
 details.sortCode      | Recipient bank sort code (GBP example)                | Text          | Currency Dependent
 details.accountNumber | Recipient bank account no (GBP example)               | Text          | Currency Dependent
+details.language      | For `email` recipients, the target email language     | Text          | true
 
 
 ## Create Email Recipient
@@ -196,7 +203,8 @@ curl -X POST https://api.sandbox.transferwise.tech/v1/accounts \
           "currency": "EUR", 
           "type": "email", 
            "details": { 
-              "email": "ann.johnson@gmail.com"
+              "email": "ann.johnson@gmail.com",
+              "language": "es"
            } 
          }'
 ```
@@ -263,6 +271,12 @@ curl -X POST https://api.sandbox.transferwise.tech/v1/accounts \
         "idDocumentNumber": null,
         "targetProfile": null,
         "taxId": null,
+        "job": null,
+        "nationality": null,
+        "bban": null,
+        "town": null,
+        "postCode": null,
+        "language": "es",
         "iban": null,
         "bic": null,
         "IBAN": null,
@@ -279,6 +293,25 @@ If you don't know recipient bank account details you can set up **email recipien
 
 TransferWise will email your recipient with a link to collect their bank account details. 
 Once your recipient provides bank account details securely to TransferWise we are able to complete your transfer.
+
+You may optionally wish to specify the language the email will be sent in.  The `details.language` field can be used
+to add an ISO 639-1 language code.  If left blank, we wil email the recipient using english.  Languages supported are:
+
+Language                | ISO 639-1
+---------               | -------
+Chinese                 | zh
+Czech                   | cz
+English                 | en
+French                  | fr
+German                  | de
+Hungarian               | hu
+Italian                 | it
+Japanese                | jp
+Polish                  | pl
+Portugese               | pt
+Russian                 | ru
+Spanish                 | es
+Turkish                 | tr
 
 
 <aside class="warning">
@@ -357,6 +390,12 @@ curl -X GET https://api.sandbox.transferwise.tech/v1/accounts/{accountId} \
         "idDocumentNumber": null,
         "targetProfile": null,
         "taxId": null,
+        "job": null,
+        "nationality": null,
+        "bban": null,
+        "town": null,
+        "postCode": null,
+        "language": null,
         "iban": null,
         "bic": null,
         "IBAN": null,
@@ -446,6 +485,12 @@ curl -X GET https://api.sandbox.transferwise.tech/v1/accounts?profile=<profileId
           "idDocumentNumber": null,
           "targetProfile": null,
           "taxId": null,
+          "job": null,
+          "nationality": null,
+          "bban": null,
+          "town": null,
+          "postCode": null,
+          "language": null,
           "iban": null,
           "bic": null,
           "IBAN": null,
@@ -514,6 +559,12 @@ curl -X GET https://api.sandbox.transferwise.tech/v1/accounts?profile=<profileId
           "idDocumentNumber": null,
           "targetProfile": null,
           "taxId": null,
+          "job": null,
+          "nationality": null,
+          "bban": null,
+          "town": null,
+          "postCode": null,
+          "language": null,
           "iban": null,
           "bic": null,
           "IBAN": null,
