@@ -174,6 +174,13 @@ The token should always live server-side, exposing domain-logic via API-s.
 If you need to pass the token around via HTTP requests, use HTTP headers or POST body - do not store the token in URI
 or query parameters. Web servers usually log the URL and browsers pass it between websites via the Referrer header.
 
+Please enable have two-factor authentication before issuing tokens. You have an option to whitelist single IPs or entire IP ranges and select the right privileges for the token during the creation or later on. 
+
+Once the token is issued, you can reveal it anytime using two-factor authentication.
+
+*NB! Please do not pass your token to anyone or expose it on the internet and do not paste it into unreliable websites.*
+
+
 ### Limiting token access by IP
 
 You can enhance your integration security by only allowing certain IP addresses to use your API token.
